@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/productCard"
+    style="@style/AC.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/app_margin_3x"
+    android:layout_marginTop="@dimen/app_margin_1x"
+    android:layout_marginEnd="@dimen/app_margin_3x"
+    android:layout_marginBottom="@dimen/app_margin_1x"
+    android:foreground="?selectableItemBackground"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/search_card_height"
+        android:paddingTop="@dimen/app_margin_half"
+        android:paddingBottom="@dimen/app_margin_half">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/productImageCard"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="@dimen/app_margin_half"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/ac_red"
+                android:src="@drawable/app_ac_logo" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productNameText"
+            style="@style/AC.Text.B2.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/app_margin_2x"
+            android:layout_marginEnd="@dimen/app_margin_1x_half"
+            android:letterSpacing="0"
+            app:layout_constraintBottom_toTopOf="@+id/productCodeText"
+            app:layout_constraintEnd_toStartOf="@+id/productArrowImage"
+            app:layout_constraintStart_toEndOf="@+id/productImageCard"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Bahulu - Chocolate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productCodeText"
+            style="@style/AC.Text.B2.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_margin_1x"
+            android:textColor="@color/ac_red_900"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/productNameText"
+            app:layout_constraintTop_toBottomOf="@+id/productNameText"
+            tools:text="121300" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/productQuotationIndicatorImage"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="@dimen/app_margin_half"
+            android:src="@drawable/ic_swap_vertical_circle"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/productCodeText"
+            app:layout_constraintStart_toEndOf="@+id/productCodeText"
+            app:layout_constraintTop_toTopOf="@+id/productCodeText"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/productArrowImage"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="@dimen/app_margin_2x"
+            android:src="@drawable/ic_arrow_forward_ios"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

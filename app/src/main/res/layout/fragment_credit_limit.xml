@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/component_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/component_customer_id_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_4x"
+                android:layout_marginTop="@dimen/app_margin_half"
+                android:layout_marginEnd="@dimen/app_margin_4x"
+                android:layout_marginBottom="@dimen/app_margin_half" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/AC.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_4x"
+                android:layout_marginEnd="@dimen/app_margin_4x"
+                app:cardElevation="2dp"
+                app:contentPaddingBottom="@dimen/app_margin_2x"
+                app:contentPaddingLeft="@dimen/app_margin_2x_half"
+                app:contentPaddingRight="@dimen/app_margin_2x_half"
+                app:contentPaddingTop="@dimen/app_margin_2x">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_overdue_requested_user_id" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitRequestedUserId"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_overdue_requested_date_time" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitRequestedDateTime"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_overdue_net_total" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitNetTotal"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/AC.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_4x"
+                android:layout_marginTop="@dimen/app_margin_2x"
+                android:layout_marginEnd="@dimen/app_margin_4x"
+                android:layout_marginBottom="@dimen/app_margin_4x"
+                app:cardElevation="2dp"
+                app:contentPaddingBottom="@dimen/app_margin_2x"
+                app:contentPaddingLeft="@dimen/app_margin_2x_half"
+                app:contentPaddingRight="@dimen/app_margin_2x_half"
+                app:contentPaddingTop="@dimen/app_margin_2x">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_outstanding_AR" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitOutstandingInAR"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_outstanding_DO" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitOutstandingInDO"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_outstanding_SO" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitOutstandingInSO"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_pd_cheque" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitPDCheque"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/app_margin_1x_half"
+                        android:layout_marginBottom="@dimen/app_margin_half"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_total_outstanding" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitTotalOutstanding"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_original" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitOriginalCreditLimit"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half"
+                            android:background="@drawable/bg_round_rect_text_background_orange" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_increment_percentage" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitIncrementPercentage"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half"
+                            android:background="@drawable/bg_round_rect_text_background_orange" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_increased_credit_limit" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitIncreasedCreditLimit"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half"
+                            android:background="@drawable/bg_round_rect_text_background_orange" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Text.B2.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_credit_limit_exceeded_credit"
+                            android:textColor="@color/ac_red_900" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/creditLimitExceededCredit"
+                            style="@style/AC.Text.B2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half"
+                            android:background="@drawable/bg_round_rect_text_background_red" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

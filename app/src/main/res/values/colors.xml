@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ac_red">@color/ac_red_500</color>
+    <color name="ac_red_50">#fce4e4</color>
+    <color name="ac_red_100">#f7bbba</color>
+    <color name="ac_red_200">#f18e8d</color>
+    <color name="ac_red_300">#eb615f</color>
+    <color name="ac_red_400">#e73f3c</color>
+    <color name="ac_red_500">#e31d1a</color>
+    <color name="ac_red_600">#e01a17</color>
+    <color name="ac_red_700">#dc1513</color>
+    <color name="ac_red_800">#d8110f</color>
+    <color name="ac_red_900">#d00a08</color>
+    <color name="ac_red_A100">#fffafa</color>
+    <color name="ac_red_A200">#ffc7c7</color>
+    <color name="ac_red_A400">#ff9594</color>
+    <color name="ac_red_A700">#ff7b7a</color>
+    <color name="ac_red_disabled">#4De31d1a</color>
+    <color name="ac_red_50_translucent">#50fce4e4</color>
+
+    <color name="ac_orange">@color/ac_orange_500</color>
+    <color name="ac_orange_50">#fef1e0</color>
+    <color name="ac_orange_100">#fbdcb3</color>
+    <color name="ac_orange_200">#f9c580</color>
+    <color name="ac_orange_300">#f7ae4d</color>
+    <color name="ac_orange_400">#f59c26</color>
+    <color name="ac_orange_500">#f38b00</color>
+    <color name="ac_orange_600">#f18300</color>
+    <color name="ac_orange_700">#ef7800</color>
+    <color name="ac_orange_800">#ed6e00</color>
+    <color name="ac_orange_900">#ea5b00</color>
+    <color name="ac_orange_A100">#ffffff</color>
+    <color name="ac_orange_A200">#ffe9de</color>
+    <color name="ac_orange_A400">#ffc6ab</color>
+    <color name="ac_orange_A700">#ffb591</color>
+    <color name="ac_orange_50_translucent">#b3fef1e0</color>
+
+    <color name="ac_green">@color/ac_green_500</color>
+    <color name="ac_green_50">#f1f8e9</color>
+    <color name="ac_green_500">#219653</color>
+
+    <color name="ac_blue">@color/ac_blue_500</color>
+    <color name="ac_blue_50">#e1f5fe</color>
+    <color name="ac_blue_500">#2f80ed</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="ac_card_surface">#fafafa</color>
+    <color name="ac_inactive_card_surface">#e0e0e0</color>
+    <color name="ac_separator">#c4c4c4</color>
+    <color name="ac_table_header_background">#efefef</color>
+    <color name="ac_table_row_header_separator">#e7e7e7</color>
+</resources>

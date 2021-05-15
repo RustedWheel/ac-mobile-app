@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.salesorder.cart.CartFragment">
+
+    <include layout="@layout/component_toolbar" />
+
+    <include layout="@layout/component_cart_customer_header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartProductOrdersRecycler"
+            style="@style/AC.RecyclerView.Cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/app_margin_1x"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_product_order_list" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/app_margin_2x"
+            android:background="@drawable/bg_shadow_white_up"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartRemarksCard"
+                style="@style/AC.Card.Button"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="@dimen/app_margin_quarter"
+                android:layout_marginEnd="@dimen/app_margin_2x"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/cartAddProductCard"
+                app:layout_constraintEnd_toStartOf="@id/cartAddProductCard"
+                app:layout_constraintStart_toStartOf="@id/cartConfirmOrderCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/app_margin_2x"
+                    android:paddingEnd="@dimen/app_margin_3x">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cartRemarksFilledIndicatorImage"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        app:srcCompat="@drawable/ic_insert_drive_file"
+                        tools:src="@drawable/ic_description" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/AC.Text.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_1x"
+                        android:text="@string/cart_remarks" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartAddProductCard"
+                style="@style/AC.Card.Button"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/app_margin_quarter"
+                android:layout_marginBottom="@dimen/app_margin_2x"
+                app:cardBackgroundColor="@color/ac_orange"
+                app:layout_constraintBottom_toTopOf="@id/cartConfirmOrderCard"
+                app:layout_constraintEnd_toEndOf="@id/cartConfirmOrderCard">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/app_margin_2x"
+                    android:paddingEnd="@dimen/app_margin_3x">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/AC.Text.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_1x"
+                        android:text="@string/cart_add"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartConfirmOrderCard"
+                style="@style/AC.Card.Button"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/app_margin_3x"
+                android:layout_marginEnd="@dimen/app_margin_3x"
+                android:layout_marginBottom="@dimen/app_margin_1x_half"
+                app:cardBackgroundColor="@color/floating_red_button_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cartTotalText"
+                        style="@style/AC.Text.B1.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/cartTotalTaxText"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="RM 585.60" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cartTotalTaxText"
+                        style="@style/AC.Text.B2.SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/cartTotalText"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="(+0.00)" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cartConfirmOrderArrowImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/app_margin_2x"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_chevron_right" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

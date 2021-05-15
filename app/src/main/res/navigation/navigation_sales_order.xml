@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/customerListFragment">
+
+    <fragment
+        android:id="@+id/customerListFragment"
+        android:name="com.makeitez.acsalesapp.screens.customers.customerlist.CustomerListFragment"
+        android:label="@string/select_customer_title">
+        <action
+            android:id="@+id/action_customerListFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <action
+            android:id="@+id/action_customerListFragment_to_customerDetailsFragment"
+            app:destination="@id/customerDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedOrdersFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.saved.SavedOrdersFragment"
+        android:label="@string/saved_order_title">
+        <action
+            android:id="@+id/action_savedOrdersFragment2_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_categoryListFragment"
+            app:destination="@id/navigation_products"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <action
+            android:id="@+id/action_cartFragment_to_productOrderFragment"
+            app:destination="@id/productOrderFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <action
+            android:id="@+id/action_cartFragment_to_orderConfirmationScreen"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <include app:graph="@navigation/navigation_products" />
+    <fragment
+        android:id="@+id/productOrderFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.productorder.ProductOrderFragment"
+        android:label="Product Order"
+        tools:layout="@layout/fragment_product_order">
+        <action
+            android:id="@+id/action_productOrderFragment_to_priceReferenceFragment"
+            app:destination="@id/priceReferenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/priceReferenceFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.pricereference.PriceReferenceFragment"
+        android:label="@string/price_reference_title"
+        tools:layout="@layout/fragment_price_reference" />
+    <fragment
+        android:id="@+id/orderConfirmationFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.confirmation.OrderConfirmationFragment"
+        android:label="">
+        <argument
+            android:name="salesOrderDocNo"
+            app:argType="string" />
+        <argument
+            android:name="isOrderSuccessful"
+            app:argType="boolean" />
+        <argument
+            android:name="isDuplicateOrder"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_orderConfirmationFragment_to_viewCartFragment"
+            app:destination="@id/viewCartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCartFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.cart.ViewCartFragment"
+        android:label="View Cart">
+        <action
+            android:id="@+id/action_viewCartFragment_to_viewProductOrderFragment"
+            app:destination="@id/viewProductOrderFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <argument
+            android:name="viewMode"
+            app:argType="com.makeitez.acsalesapp.screens.salesorder.ViewSalesOrderMode" />
+        <action
+            android:id="@+id/action_viewCartFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_viewCartFragment_to_overdueLimitFragment"
+            app:destination="@id/overdueLimitFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <action
+            android:id="@+id/action_viewCartFragment_to_creditLimitFragment"
+            app:destination="@id/creditLimitFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewProductOrderFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.productorder.ViewProductOrderFragment"
+        android:label="View Product Order">
+        <argument
+            android:name="indicateViolations"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerDetailsFragment"
+        android:name="com.makeitez.acsalesapp.screens.customers.customerdetails.CustomerDetailsFragment"
+        android:label="Customer Details">
+        <action
+            android:id="@+id/action_customerDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <argument
+            android:name="customerAccountNumber"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_customerDetailsFragment_to_agingSummaryFragment"
+            app:destination="@id/agingSummaryFragment" />
+        <action
+            android:id="@+id/action_customerDetailsFragment_to_previousOrderListFragment"
+            app:destination="@id/previousOrderListFragment" />
+        <action
+            android:id="@+id/action_customerDetailsFragment_to_paymentListFragment"
+            app:destination="@id/paymentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agingSummaryFragment"
+        android:name="com.makeitez.acsalesapp.screens.customers.aging.AgingSummaryFragment"
+        android:label="@string/aging_title">
+        <argument
+            android:name="customerAccountNumber"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_agingSummaryFragment_to_agingDetailsFragment"
+            app:destination="@id/agingDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/previousOrderListFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.previousorder.PreviousOrderListFragment"
+        android:label="Previous Orders">
+        <argument
+            android:name="viewType"
+            app:argType="com.makeitez.acsalesapp.screens.salesorder.previousorder.PreviousOrdersViewType" />
+        <argument
+            android:name="customerAccountNumber"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_previousOrderListFragment_to_viewCartFragment"
+            app:destination="@id/viewCartFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/agingDetailsFragment"
+        android:name="com.makeitez.acsalesapp.screens.customers.aging.AgingDetailsFragment"
+        android:label="@string/detailed_aging_title">
+        <argument
+            android:name="customerAccountNumber"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentListFragment"
+        android:name="com.makeitez.acsalesapp.screens.customers.paymentlist.PaymentListFragment"
+        android:label="@string/payment_info_title">
+        <argument
+            android:name="customerAccountNumber"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/overdueLimitFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.cart.OverdueLimitFragment"
+        android:label="@string/overdue_limit_exceeded_title">
+        <action
+            android:id="@+id/action_viewCartFragment_to_overdueDocDetailsFragment"
+            app:destination="@id/overdueDocDetailsFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/overdueDocDetailsFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.cart.OverdueDocDetailsFragment"
+        android:label="@string/overdue_doc_details_title" />
+    <fragment
+        android:id="@+id/creditLimitFragment"
+        android:name="com.makeitez.acsalesapp.screens.salesorder.cart.CreditLimitFragment"
+        android:label="CreditLimitFragment" />
+</navigation>

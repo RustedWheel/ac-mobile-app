@@ -1,0 +1,213 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AC" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
+        <!-- override application's attributes in variants -->
+    </style>
+
+    <style name="AC.Theme">
+        <item name="colorPrimary">@color/ac_red</item>
+        <item name="colorPrimaryDark">@color/ac_red_900</item>
+        <item name="colorAccent">@color/ac_orange</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="textInputStyle">@style/AC.TextInputLayout.Dense</item>
+        <item name="snackbarStyle">@style/AC.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/AC.SnackbarButton</item>
+    </style>
+
+    <style name="AC.Theme.NoTitleBar">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AC.Theme.Home">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AC.ThemeOverlay.ACRed" parent="">
+        <item name="colorPrimary">@color/ac_red</item>
+        <item name="colorPrimaryDark">@color/ac_red_900</item>
+        <item name="colorAccent">@color/ac_red</item>
+    </style>
+
+    <style name="AC.ThemeOverlay.Snackbar" parent="">
+        <item name="colorOnSurface">@color/ac_orange_900</item>
+    </style>
+
+    <style name="AC.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.AC.TextInputLayout</item>
+        <item name="boxStrokeColor">@color/input_text_stroke_color</item>
+        <item name="boxStrokeWidth">@dimen/text_input_box_stroke_width</item>
+    </style>
+
+    <style name="AC.TextInputLayout.Dense">
+        <item name="materialThemeOverlay">
+            @style/ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense
+        </item>
+    </style>
+
+    <style name="AC.Button" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/AC.Text.Button</item>
+    </style>
+
+    <style name="AC.Button.Red" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_height">@dimen/button_default_height</item>
+        <item name="android:background">@drawable/round_button_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/AC.Text.Button</item>
+    </style>
+
+    <style name="AC.Button.Orange" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_height">@dimen/button_default_height</item>
+        <item name="android:background">@drawable/round_button_orange</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/AC.Text.Button</item>
+    </style>
+
+    <style name="AC.Button.Logout" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/round_rect_button_light_red</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AC.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="materialThemeOverlay">@style/AC.ThemeOverlay.Snackbar</item>
+    </style>
+
+    <style name="AC.SnackbarButton" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AC.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/ac_red</item>
+        <item name="colorPrimaryDark">@color/ac_red_900</item>
+        <item name="colorAccent">@color/ac_orange</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AC.Dialog.ActionSheet">
+        <item name="android:windowAnimationStyle">@style/ActionSheet.Anim</item>
+    </style>
+
+    <style name="ActionSheet.Anim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/dialog_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slide_out</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.AC.TextInputLayout" parent="">
+        <item name="cornerSize">@dimen/text_input_corner_size</item>
+    </style>
+
+    <style name="AC.Card">
+        <item name="cardBackgroundColor">@color/ac_card_surface</item>
+        <item name="cardCornerRadius">@dimen/card_corner_size</item>
+    </style>
+
+    <style name="AC.Card.Button">
+        <item name="android:layout_height">@dimen/button_default_height</item>
+        <item name="cardBackgroundColor">@color/ac_card_surface</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">24dp</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="AC.Card.Red">
+        <item name="cardBackgroundColor">@color/ac_red</item>
+    </style>
+
+    <style name="AC.Card.Orange">
+        <item name="cardBackgroundColor">@color/ac_orange</item>
+    </style>
+
+    <style name="AC.DialogButton" parent="@style/AC.Text.B2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/app_margin_1x</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+    </style>
+
+    <style name="AC.LabelAndInputContainer.Form" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/app_margin_2x_half</item>
+    </style>
+
+    <style name="AC.Label.Form" parent="AC.Text.B2.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.46</item>
+    </style>
+
+    <style name="AC.EditText.Form" parent="AC.Text.Subtitle1">
+        <item name="theme">@style/AC.ThemeOverlay.ACRed</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingStart">@dimen/app_margin_1x_half</item>
+        <item name="android:paddingEnd">@dimen/app_margin_1x_half</item>
+        <item name="android:background">@drawable/outlined_input_text_background</item>
+        <item name="android:layout_weight">0.54</item>
+    </style>
+
+    <style name="AC.Hint.Form" parent="AC.Text.B4.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/ac_orange_900</item>
+        <item name="android:layout_marginBottom">@dimen/app_margin_half</item>
+    </style>
+
+    <style name="AC.RecyclerView.Cart" parent="">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:paddingBottom">140dp</item>
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="AC.TableView.Cell" parent="AC.Text.B4">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/app_margin_half</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="AC.TableView.Cell.Header" parent="AC.Text.B4.SemiBold">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/app_margin_half</item>
+    </style>
+
+    <style name="AC.TextView.CartItem.Indicator" parent="AC.Text.B5.SemiBold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/product_order_indicator_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">54dp</item>
+        <item name="android:minHeight">@dimen/cart_item_indicator_height</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textColor">@color/ac_red_400</item>
+    </style>
+
+    <style name="AC.TextView.CartItem.Drawable" parent="AC.Text.B2.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/app_margin_half</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AC.TextView.PriceHistory" parent="AC.Text.B2.Medium">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

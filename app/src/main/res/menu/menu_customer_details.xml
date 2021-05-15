@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/customerDetailsOptionsGroup">
+        <item
+            android:id="@+id/customerMonthlyStatement"
+            android:icon="@drawable/ic_receipt_long"
+            app:showAsAction="always"
+            android:title="Customer Monthly Statement" />
+
+        <item
+            android:id="@+id/customerCreditCheck"
+            android:title="@string/customer_credit_check" />
+        <item
+            android:id="@+id/customerAging"
+            android:title="@string/customer_aging" />
+        <item
+            android:id="@+id/customerPaymentInfo"
+            android:title="@string/customer_payment_info" />
+    </group>
+</menu>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/component_toolbar" />
+
+        <LinearLayout
+            android:id="@+id/previousOrderSearchInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/app_margin_3x_half"
+            android:paddingTop="@dimen/app_margin_1x"
+            android:paddingEnd="@dimen/app_margin_3x_half"
+            android:paddingBottom="@dimen/app_margin_1x_half"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/previousOrderCustomerSearchText"
+                style="@style/AC.Text.B2.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                tools:text="Baker" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/previousOrderDateSearchText"
+                style="@style/AC.Text.B2.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                tools:text="11/06/20 - 12/06/20" />
+
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/previousOrderListRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/previousOrderListRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/app_margin_1x_half"
+                    android:paddingBottom="84dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_previous_order_list" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/previousOrderNoDataText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/app_margin_5x"
+                    android:gravity="center"
+                    android:text="@string/previous_order_no_data"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/previousOrderBottomShadow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_shadow_white_up"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/previousOrderSearchButton"
+        tools:visibility="visible" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/previousOrderSearchButton"
+        style="@style/AC.Card.Button"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/app_margin_3x"
+        android:layout_marginTop="@dimen/app_margin_1x"
+        android:layout_marginEnd="@dimen/app_margin_3x"
+        android:layout_marginBottom="@dimen/app_margin_1x_half"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/ac_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AC.Text.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/app_margin_half"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:text="@string/generic_search" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/default_icon_size"
+                android:layout_height="@dimen/default_icon_size"
+                android:layout_marginStart="@dimen/app_margin_half"
+                app:srcCompat="@drawable/ic_filter" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg_round_rect"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/app_margin_2x_half"
+    android:paddingTop="@dimen/app_margin_2x_half"
+    android:paddingEnd="@dimen/app_margin_2x_half"
+    android:paddingBottom="@dimen/app_margin_2x">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/AC.Text.B1.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_announcement_dialog_title" />
+
+    <ProgressBar
+        android:id="@+id/addAnnouncementLoadingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/app_margin_4x"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/ac_red"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/addAnnouncementContentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/AC.LabelAndInputContainer.Form"
+            android:layout_marginTop="@dimen/app_margin_3x">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AC.Label.Form"
+                android:layout_weight="0.34"
+                android:text="@string/add_announcement_dialog_title_label" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/addAnnouncementTitleInputText"
+                style="@style/AC.EditText.Form"
+                android:layout_weight="0.66"
+                android:inputType="text"
+                tools:text="Company Lunch" />
+
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AC.Label.Form"
+                android:layout_gravity="top"
+                android:layout_marginTop="@dimen/app_margin_2x"
+                android:layout_weight="0.34"
+                android:text="@string/add_announcement_dialog_message_label" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/addAnnouncementMessageInputText"
+                style="@style/AC.EditText.Form"
+                android:layout_weight="0.66"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:minLines="3"
+                tools:text="Happening this afternoon." />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_margin_2x"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addAnnouncementCancelButton"
+                style="@style/AC.DialogButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generic_cancel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addAnnouncementConfirmButton"
+                style="@style/AC.DialogButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generic_confirm"
+                android:textColor="@color/red_text_button_color" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

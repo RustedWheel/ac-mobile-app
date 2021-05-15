@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cartSubmissionRecordLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/app_margin_3x_half"
+    android:layout_marginEnd="@dimen/app_margin_3x_half"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/app_margin_1x_half"
+    android:paddingBottom="@dimen/app_margin_half">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cartSubmissionDocNoText"
+        style="@style/AC.Text.B3.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="SO 2020/06-677" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cartSubmissionTimeText"
+        style="@style/AC.Text.B3.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        tools:text="12/06/2020, 10:36am" />
+
+</LinearLayout>

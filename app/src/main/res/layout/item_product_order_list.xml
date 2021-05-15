@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productOrderViolationCountCard"
+        style="@style/AC.Card"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="@dimen/app_margin_2x"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/ac_red_400"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productOrderViolationCountText"
+            style="@style/AC.Text.B1.Bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            tools:text="2" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/productOrderDeleteButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="17dp"
+        android:elevation="4dp"
+        android:paddingStart="@dimen/app_margin_2x"
+        android:paddingEnd="0dp"
+        android:paddingBottom="@dimen/app_margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cancel" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/productOrderQuotationIconImage"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="@dimen/app_margin_1x"
+        android:layout_marginEnd="@dimen/app_margin_1x"
+        android:elevation="3dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/productOrderCard"
+        app:layout_constraintTop_toTopOf="@id/productOrderCard"
+        app:srcCompat="@drawable/ic_swap_vertical_circle"
+        tools:visibility="visible" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productOrderCard"
+        style="@style/AC.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin_3x"
+        android:layout_marginTop="@dimen/app_margin_1x"
+        android:layout_marginEnd="@dimen/app_margin_3x"
+        android:layout_marginBottom="@dimen/app_margin_1x"
+        android:padding="@dimen/app_margin_2x"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/app_margin_1x_half"
+            android:paddingTop="@dimen/app_margin_1x_half"
+            android:paddingEnd="0dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productNameText"
+                style="@style/AC.Text.H6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="0dp"
+                android:paddingEnd="@dimen/app_margin_2x"
+                tools:text="Bahulu - Musang King" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_1x_half">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productCodeText"
+                    style="@style/AC.Text.B2.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="121300" />
+
+                <LinearLayout
+                    android:id="@+id/productOrderIndicatorLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/cart_item_indicator_height"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/app_margin_1x"
+                    android:paddingEnd="@dimen/app_margin_1x"
+                    android:weightSum="1"
+                    app:layout_constraintEnd_toStartOf="@id/productOrderDynamicContentLayout"
+                    app:layout_constraintStart_toEndOf="@id/productCodeText"
+                    app:layout_constraintTop_toTopOf="@id/productCodeText">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productOrderDiscountText"
+                        style="@style/AC.TextView.CartItem.Indicator"
+                        tools:text="-99%" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productOrderFocText"
+                        style="@style/AC.TextView.CartItem.Indicator"
+                        android:layout_marginStart="@dimen/app_margin_1x"
+                        tools:text="999 FOC" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/app_margin_2x"
+                    android:layout_marginBottom="@dimen/app_margin_1x"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="@dimen/app_margin_quarter"
+                    android:weightSum="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/productOrderDynamicContentLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/productOrderIndicatorLayout"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productOrderUnitPriceText"
+                        style="@style/AC.TextView.CartItem.Drawable"
+                        android:layout_weight="0.45"
+                        android:drawableStart="@drawable/ic_local_atm"
+                        android:textColor="@color/ac_green"
+                        tools:text="1.800" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productOrderUomText"
+                        style="@style/AC.TextView.CartItem.Drawable"
+                        android:layout_weight="0.55"
+                        android:drawableStart="@drawable/ic_cube_outline"
+                        android:textColor="@color/ac_orange_600"
+                        tools:text="Ctn (16)" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/productOrderDynamicContentBackgroundView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/product_order_dynamic_content_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/productOrderDynamicContentLayout"
+                    app:layout_constraintTop_toTopOf="@id/productOrderDynamicContentLayout" />
+
+                <LinearLayout
+                    android:id="@+id/productOrderDynamicContentLayout"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/app_margin_1x"
+                    android:paddingTop="@dimen/app_margin_1x_half"
+                    android:paddingEnd="@dimen/app_margin_1x"
+                    android:paddingBottom="@dimen/app_margin_1x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/app_margin_quarter"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/productOrderDecrementButton"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:tint="?attr/colorPrimary"
+                            app:srcCompat="@drawable/ic_remove_circle" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/productOrderQuantityText"
+                            style="@style/AC.Text.H6.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="80dp"
+                            android:paddingStart="@dimen/app_margin_half"
+                            android:paddingEnd="@dimen/app_margin_half"
+                            android:textColor="?attr/colorPrimary"
+                            tools:text="32" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/productOrderIncrementButton"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:tint="?attr/colorPrimary"
+                            app:srcCompat="@drawable/ic_add_circle" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productOrderTotalPriceText"
+                        style="@style/AC.Text.B2.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/app_margin_half"
+                        android:gravity="center"
+                        android:textColor="@color/ac_red_900"
+                        tools:text="RM 57.60" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

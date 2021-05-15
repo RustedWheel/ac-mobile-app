@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderConfirmationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/ac_red_300">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/orderConfirmationCheckmarkImage"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="@dimen/app_margin_1x"
+            app:layout_constraintBottom_toTopOf="@+id/orderConfirmationStatusLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:srcCompat="@drawable/ic_checkmark_circle_outline" />
+
+        <LinearLayout
+            android:id="@+id/orderConfirmationStatusLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/app_margin_8x"
+            android:paddingEnd="@dimen/app_margin_8x"
+            app:layout_constraintBottom_toTopOf="@+id/orderConfirmationViewSalesOrderCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderConfirmationCheckmarkImage">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderConfirmationStatusText"
+                style="@style/AC.Text.H5.SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin_3x"
+                android:layout_marginBottom="@dimen/app_margin_1x_half"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                tools:text="@string/order_confirmation_submitted" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderConfirmationDocNoText"
+                style="@style/AC.Text.B1.SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/app_margin_1x"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                tools:text="SO 2020/06-677" />
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/orderConfirmationViewSalesOrderCard"
+            style="@style/AC.Card.Button"
+            android:layout_width="0dp"
+            android:layout_marginBottom="@dimen/app_margin_2x"
+            app:layout_constraintBottom_toTopOf="@id/orderConfirmationBackToHomeCard"
+            app:layout_constraintEnd_toEndOf="@id/orderConfirmationBackToHomeCard"
+            app:layout_constraintStart_toStartOf="@id/orderConfirmationBackToHomeCard">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AC.Text.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/order_confirmation_view_sales_order"
+                android:textAllCaps="true"
+                android:textColor="@color/black" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/orderConfirmationBackToHomeCard"
+            style="@style/AC.Card.Button"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/app_margin_5x"
+            android:layout_marginEnd="@dimen/app_margin_5x"
+            android:layout_marginBottom="@dimen/app_margin_8x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/AC.Text.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/order_confirmation_back_to_home"
+                android:textAllCaps="true"
+                android:textColor="@color/ac_red_900" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

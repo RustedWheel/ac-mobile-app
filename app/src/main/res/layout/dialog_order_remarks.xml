@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_round_rect"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/app_margin_2x_half"
+    android:paddingTop="@dimen/app_margin_2x_half"
+    android:paddingEnd="@dimen/app_margin_2x_half"
+    android:paddingBottom="@dimen/app_margin_2x">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/AC.Text.B1.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/order_remarks_title" />
+
+    <LinearLayout
+        style="@style/AC.LabelAndInputContainer.Form"
+        android:layout_marginTop="@dimen/app_margin_3x">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/AC.Label.Form"
+            android:layout_weight="0.34"
+            android:text="@string/order_remarks_delivery_date" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/orderRemarksDeliveryDateInputText"
+            style="@style/AC.EditText.Form"
+            android:layout_weight="0.66"
+            android:inputType="text"
+            android:cursorVisible="false"
+            android:focusable="false"
+            tools:text="13/11/2020" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/AC.LabelAndInputContainer.Form">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/AC.Label.Form"
+            android:layout_weight="0.34"
+            android:text="@string/order_remarks_po" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/orderRemarksPoInputText"
+            style="@style/AC.EditText.Form"
+            android:layout_weight="0.66"
+            android:inputType="text"
+            tools:text="DF1246" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/AC.Label.Form"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/app_margin_2x"
+            android:layout_weight="0.34"
+            android:text="@string/order_remarks_remarks" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/orderRemarksInputText"
+            style="@style/AC.EditText.Form"
+            android:layout_weight="0.66"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minLines="3"
+            tools:text="The items are fragile?" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_2x"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderRemarksCancelButton"
+            style="@style/AC.DialogButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_cancel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderRemarksSaveButton"
+            style="@style/AC.DialogButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_save"
+            android:textColor="@color/ac_red" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

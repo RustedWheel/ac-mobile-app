@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="saved_order_title">Saved Orders</string>
+    <string name="saved_order_delete_saved_order_title">Delete Saved Order?</string>
+    <string name="saved_order_delete_saved_order_message">Delete saved order</string>
+    <string name="saved_order_empty_message">You currently have no saved orders</string>
+    <string name="saved_order_customer_no_longer_exists">Customer no longer exists.</string>
+</resources>

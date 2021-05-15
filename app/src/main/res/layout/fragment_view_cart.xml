@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.salesorder.cart.CartFragment">
+
+    <include layout="@layout/component_toolbar" />
+
+    <include layout="@layout/component_cart_customer_header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartProductOrdersRecycler"
+            style="@style/AC.RecyclerView.Cart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_product_order_list" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_shadow_white_up"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/app_margin_1x_half"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartTotalAndRemarksCard"
+                style="@style/AC.Card.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_3x"
+                android:layout_marginTop="@dimen/app_margin_half"
+                android:layout_marginEnd="@dimen/app_margin_3x"
+                android:layout_marginBottom="@dimen/app_margin_half"
+                app:cardCornerRadius="18dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cartTotalWithTaxText"
+                    style="@style/AC.Text.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="36dp"
+                    android:textAllCaps="true"
+                    tools:text="Total: RM 585.60 (+0.00)" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_2x_half"
+                android:layout_marginTop="@dimen/app_margin_half"
+                android:layout_marginEnd="@dimen/app_margin_2x_half"
+                android:layout_marginBottom="@dimen/app_margin_half">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cartSecondaryButton"
+                    style="@style/AC.Button.Orange"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/app_margin_half"
+                    android:layout_marginTop="@dimen/app_margin_half"
+                    android:layout_marginEnd="@dimen/app_margin_half"
+                    android:layout_marginBottom="@dimen/app_margin_1x"
+                    android:layout_weight="1"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    tools:text="@string/cart_reject"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cartMainButton"
+                    style="@style/AC.Button.Red"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/app_margin_half"
+                    android:layout_marginTop="@dimen/app_margin_half"
+                    android:layout_marginEnd="@dimen/app_margin_half"
+                    android:layout_marginBottom="@dimen/app_margin_1x"
+                    android:layout_weight="1"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    tools:text="@string/cart_approve" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

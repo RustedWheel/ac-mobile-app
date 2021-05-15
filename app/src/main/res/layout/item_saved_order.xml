@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/savedOrderDateHeader"
+        style="@style/AC.Text.B2.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin_3x"
+        android:layout_marginTop="@dimen/app_margin_1x_half"
+        android:layout_marginEnd="@dimen/app_margin_3x"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="12/06/2020" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/savedOrderCard"
+        style="@style/AC.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin_3x"
+        android:layout_marginTop="@dimen/app_margin_1x"
+        android:layout_marginEnd="@dimen/app_margin_3x"
+        android:layout_marginBottom="@dimen/app_margin_1x"
+        android:foreground="?selectableItemBackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savedOrderDateHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/app_margin_2x"
+            android:paddingTop="10dp"
+            android:paddingEnd="@dimen/app_margin_2x"
+            android:paddingBottom="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/savedOrderCompanyName"
+                style="@style/AC.Text.B2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/app_margin_2x"
+                android:layout_weight="1"
+                tools:text="Bakerman (Muar)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/savedOrderCreatedTime"
+                style="@style/AC.Text.B2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="10:36 am" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/savedOrderDeleteButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toTopOf="@id/savedOrderCard"
+        app:layout_constraintEnd_toEndOf="@id/savedOrderCard"
+        app:layout_constraintStart_toEndOf="@id/savedOrderCard"
+        app:layout_constraintTop_toTopOf="@id/savedOrderCard"
+        app:srcCompat="@drawable/ic_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

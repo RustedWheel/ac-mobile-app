@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableRowHeaderLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/table_cell_height"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tableRowHeaderText"
+        style="@style/AC.TableView.Cell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="Row Data" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/ac_table_row_header_separator" />
+
+</FrameLayout>

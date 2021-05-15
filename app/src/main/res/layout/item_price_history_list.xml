@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AC.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/app_margin_2x"
+    android:layout_marginTop="@dimen/app_margin_half"
+    android:layout_marginEnd="@dimen/app_margin_2x"
+    android:layout_marginBottom="@dimen/app_margin_1x_half"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin_1x"
+        android:layout_marginTop="@dimen/app_margin_1x_half"
+        android:layout_marginEnd="@dimen/app_margin_1x"
+        android:layout_marginBottom="@dimen/app_margin_1x_half"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productPriceHistoryDateText"
+            style="@style/AC.TextView.PriceHistory"
+            android:layout_weight="0.3"
+            android:gravity="start"
+            tools:text="28/07/20" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productPriceHistoryTypeText"
+            style="@style/AC.TextView.PriceHistory"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            tools:text="DO" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productPriceHistoryQtyText"
+            style="@style/AC.TextView.PriceHistory"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            tools:text="40 Cont" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productPriceHistoryUnitPriceText"
+            style="@style/AC.TextView.PriceHistory"
+            android:layout_weight="0.3"
+            android:gravity="end"
+            android:textColor="@color/ac_red_900"
+            tools:text="RM 2.210" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

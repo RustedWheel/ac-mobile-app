@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/genericErrorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/generic_error_something_went_wrong" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/genericErrorRefreshButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/app_margin_6x"
+        android:layout_marginTop="@dimen/app_margin_2x"
+        android:layout_marginEnd="@dimen/app_margin_6x"
+        android:text="@string/generic_try_again" />
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/productHistoryCard"
+    style="@style/AC.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/app_margin_2x_half"
+    android:layout_marginTop="@dimen/app_margin_1x"
+    android:layout_marginEnd="@dimen/app_margin_2x_half"
+    android:layout_marginBottom="@dimen/app_margin_1x"
+    android:foreground="?selectableItemBackground"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/app_margin_2x">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productHistoryCustomerName"
+                style="@style/AC.Text.B2.SemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/app_margin_2x"
+                android:layout_weight="1"
+                tools:text="Shuang Cheng Trading" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productHistoryCustomerAccountNumber"
+                style="@style/AC.Text.B2.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="290-A001" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_margin_2x"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productHistoryCreatedDate"
+                style="@style/AC.Text.B2.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="20/07/20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productHistoryQuantity"
+                style="@style/AC.Text.B2.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="@color/ac_red"
+                tools:text="40 Ctn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productHistoryPrice"
+                style="@style/AC.Text.B2.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/ac_red"
+                tools:text="RM 2.120" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

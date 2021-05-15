@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="announcements_general">General</string>
+    <string name="announcements_new_product">New Product</string>
+    <string name="announcements_no_announcements_found">No announcements found</string>
+    <string name="announcements_add_general_label">Add</string>
+    <string name="announcements_add_new_product_label">Prod</string>
+    <string name="announcements_new_product_default_uom">UOM:</string>
+    <string name="announcements_new_product_carton_size">Carton Size:</string>
+    <string name="announcements_new_product_m3">m3:</string>
+    <string name="announcements_new_product_net_weight">Net Weight:</string>
+    <string name="announcements_new_product_packing_unit">Packing Unit:</string>
+    <string name="add_announcement_dialog_title">Add Announcement</string>
+    <string name="add_announcement_dialog_title_label">Title</string>
+    <string name="add_announcement_dialog_message_label">Message</string>
+    <string name="announce_new_product_dialog_title">Announce New Product</string>
+    <string name="announce_new_product_dialog_code_label">Code</string>
+    <string name="announce_new_product_dialog_remarks_label">Remarks</string>
+    <string name="announce_new_product_dialog_inactive_product_message">Product %s is inactive</string>
+    <string name="announce_new_product_dialog_announce_label">Announce</string>
+    <string name="announce_new_product_dialog_verified_code_label">Code: %s</string>
+    <string name="announce_new_product_dialog_verified_name_label">Name: %s</string>
+    <string name="announce_new_product_dialog_verified_remarks_label">Remarks: %s</string>
+    <string name="announce_new_product_dialog_verified_empty_remarks">Remarks: -</string>
+    <string name="delete_announcement_dialog_title">Delete Announcement</string>
+    <string name="delete_announcement_dialog_message">Are you sure to delete the announcement for \"%s\"?</string>
+</resources>

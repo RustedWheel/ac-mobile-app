@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/component_toolbar" />
+
+    <include
+        android:id="@+id/customerDetailsErrorLayout"
+        layout="@layout/component_generic_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/app_margin_8x"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/customerDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customerDetailsCompanyName"
+            style="@style/AC.Text.H5.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ac_red"
+            android:gravity="center"
+            android:paddingStart="@dimen/app_margin_3x_half"
+            android:paddingTop="@dimen/app_margin_2x"
+            android:paddingEnd="@dimen/app_margin_3x_half"
+            android:paddingBottom="@dimen/app_margin_3x_half"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Company name" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customerDetailsCompanyName">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="156dp">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/AC.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/app_margin_2x"
+                    android:layout_marginTop="@dimen/app_margin_2x"
+                    android:layout_marginEnd="@dimen/app_margin_2x"
+                    android:layout_marginBottom="@dimen/app_margin_half"
+                    app:contentPaddingBottom="@dimen/app_margin_3x"
+                    app:contentPaddingLeft="@dimen/app_margin_3x"
+                    app:contentPaddingRight="@dimen/app_margin_3x"
+                    app:contentPaddingTop="@dimen/app_margin_3x">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/customerDetailsSalesAgentLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                app:srcCompat="@drawable/ic_assignment" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsSalesAgentText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                app:srcCompat="@drawable/ic_currency" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsCurrencyText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="@dimen/app_margin_half"
+                                app:srcCompat="@drawable/ic_business" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsAddressText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                app:srcCompat="@drawable/ic_account" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsContactPersonText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                app:srcCompat="@drawable/ic_phone" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsPhoneNoText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                app:srcCompat="@drawable/ic_print" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsFaxNoText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/app_margin_1x"
+                            android:paddingBottom="@dimen/app_margin_1x">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/default_icon_size"
+                                android:layout_height="@dimen/default_icon_size"
+                                app:srcCompat="@drawable/ic_email" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerDetailsEmailText"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_3x"
+                                android:layout_marginEnd="@dimen/app_margin_3x" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/customerDetailsBranchesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/AC.Text.B2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_4x"
+                        android:layout_marginTop="@dimen/app_margin_1x_half"
+                        android:layout_marginEnd="@dimen/app_margin_4x"
+                        android:text="@string/customer_branches"
+                        android:textAllCaps="true" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_2x"
+                        android:layout_marginTop="@dimen/app_margin_half"
+                        android:layout_marginEnd="@dimen/app_margin_2x"
+                        android:layout_marginBottom="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_2x">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/customerDetailsBranchesRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_half"
+                            android:overScrollMode="never"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="5"
+                            tools:listitem="@layout/item_customer_details_branch_list">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/customerDetailsButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_shadow_white_up"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/app_margin_2x_half"
+            android:paddingTop="@dimen/app_margin_2x_half"
+            android:paddingEnd="@dimen/app_margin_2x_half"
+            android:paddingBottom="@dimen/app_margin_half"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/customerDetailsPreviousOrdersButton"
+                style="@style/AC.Card.Button"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/app_margin_half"
+                android:layout_marginTop="@dimen/app_margin_half"
+                android:layout_marginEnd="@dimen/app_margin_half"
+                android:layout_marginBottom="@dimen/app_margin_1x"
+                app:cardBackgroundColor="@color/ac_orange">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/AC.Text.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/customer_previous_orders"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/customerDetailsOrderButton"
+                style="@style/AC.Card.Button"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/app_margin_half"
+                android:layout_marginTop="@dimen/app_margin_half"
+                android:layout_marginEnd="@dimen/app_margin_half"
+                android:layout_marginBottom="@dimen/app_margin_1x"
+                app:cardBackgroundColor="@color/ac_red">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/AC.Text.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/customer_continue_to_order"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

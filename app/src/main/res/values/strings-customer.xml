@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="customer_credit_status">Credit Status</string>
+    <string name="customer_credit_limit">Credit Limit: %s</string>
+    <string name="customer_credit_terms">Credit Term: %s</string>
+    <string name="customer_available_credit">Available Credit:</string>
+    <string name="customer_overdue">Overdue:</string>
+    <string name="customer_previous_orders">Previous Orders</string>
+    <string name="customer_continue_to_order">Continue to order</string>
+    <string name="customer_branches">Branches</string>
+    <string name="customer_credit_check">Credit Check</string>
+    <string name="customer_aging">Aging</string>
+    <string name="customer_payment_info">Payment Info</string>
+    <string name="customer_outstanding">Outstanding</string>
+    <string name="customer_see_more">See more</string>
+    <string name="customer_current">Current</string>
+    <string name="customer_1_month">1 Month</string>
+    <string name="customer_2_month">2 Month</string>
+    <string name="customer_3_month">3 Month</string>
+    <string name="customer_4_month">4 Months</string>
+    <string name="customer_5_and_over">5 &amp; Over</string>
+    <string name="customer_balance">Balance</string>
+    <string name="customer_total_overdue">Total Overdue</string>
+    <string name="customer_no_records_found">No records found</string>
+</resources>

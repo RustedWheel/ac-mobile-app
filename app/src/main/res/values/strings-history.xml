@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="previous_order_order_history">Order History</string>
+    <string name="previous_order_no_data">No orders found</string>
+    <string name="previous_order_customer">Customer</string>
+    <string name="previous_order_custom_date_range">%s - %s</string>
+    <string name="previous_search_sales_order">Search sales order</string>
+    <string name="previous_search_from">From</string>
+    <string name="previous_search_to">To</string>
+</resources>

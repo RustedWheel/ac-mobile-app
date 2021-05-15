@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/component_toolbar" />
+
+    <include
+        android:id="@+id/productHistoryDetailsErrorLayout"
+        layout="@layout/component_generic_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/app_margin_8x"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/productHistoryDetailsContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productHistoryDetailsProductNameText"
+                style="@style/AC.Text.H5.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ac_red"
+                android:paddingStart="@dimen/app_margin_5x"
+                android:paddingTop="@dimen/app_margin_1x"
+                android:paddingEnd="@dimen/app_margin_5x"
+                android:paddingBottom="@dimen/app_margin_2x_half"
+                android:textColor="@color/white"
+                tools:text="Bahulu - Chocolate" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_3x"
+                android:layout_marginTop="@dimen/app_margin_1x_half"
+                android:layout_marginEnd="@dimen/app_margin_3x"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productHistoryDetailsDocNoText"
+                    style="@style/AC.Text.B3.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="SO 2020/06-677" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productHistoryDetailsTimeText"
+                    style="@style/AC.Text.B3.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    tools:text="12/06/2020, 10:36am" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                style="@style/AC.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_2x"
+                android:layout_marginTop="@dimen/app_margin_1x"
+                android:layout_marginEnd="@dimen/app_margin_2x"
+                android:elevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/app_margin_2x"
+                    android:paddingTop="@dimen/app_margin_1x_half"
+                    android:paddingEnd="@dimen/app_margin_2x"
+                    android:paddingBottom="@dimen/app_margin_1x_half">
+
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Label.Form"
+                            android:text="@string/product_order_select_uom" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsUomText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:inputType="text"
+                            tools:text="Ctn" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Label.Form"
+                            android:text="@string/product_order_quantity" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsQuantityText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:inputType="number"
+                            tools:text="32" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/productHistoryDetailsUnitPriceDescription"
+                            style="@style/AC.Label.Form"
+                            tools:text="Unit Price (MYR)" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsUnitPriceText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:inputType="numberDecimal"
+                            tools:text="1.800" />
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/productHistoryDetailsPriceChangeDescription"
+                            style="@style/AC.Label.Form"
+                            tools:text="@string/product_order_new_price" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsPriceChangeText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:inputType="numberDecimal"
+                            tools:text="0.60" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/AC.LabelAndInputContainer.Form"
+                        android:layout_marginBottom="0dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Label.Form"
+                            android:text="@string/product_order_foc" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsFOCText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:inputType="number"
+                            tools:text="3" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/AC.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app_margin_2x"
+                android:layout_marginTop="@dimen/app_margin_2x"
+                android:layout_marginEnd="@dimen/app_margin_2x"
+                android:layout_marginBottom="@dimen/app_margin_3x"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/app_margin_2x"
+                    android:paddingTop="@dimen/app_margin_1x_half"
+                    android:paddingEnd="@dimen/app_margin_2x"
+                    android:paddingBottom="@dimen/app_margin_1x_half">
+
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Label.Form"
+                            android:text="@string/product_order_destination" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsDestinationText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:inputType="text"
+                            tools:text="BP Factory" />
+
+                    </LinearLayout>
+
+                    <!-- Hide as not needed but might be needed in the future -->
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Label.Form"
+                            android:text="@string/product_order_delivery_date" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsDeliveryDateText"
+                            style="@style/AC.EditText.Form"
+                            android:cursorVisible="false"
+                            android:enabled="false"
+                            android:focusable="false"
+                            tools:text="12/06/2020" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Label.Form"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="@dimen/app_margin_2x"
+                            android:text="@string/product_order_remarks" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/productHistoryDetailsRemarksText"
+                            style="@style/AC.EditText.Form"
+                            android:enabled="false"
+                            android:gravity="top"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            tools:text="Mei Tin" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_products"
+    app:startDestination="@id/categoryListFragment">
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.categorylist.CategoryListFragment"
+        android:label="@string/select_category_title">
+        <action
+            android:id="@+id/action_categoryListFragment_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.productlist.ProductListFragment"
+        android:label="@string/search_product_title">
+        <action
+            android:id="@+id/action_productListFragment_to_productOrderFragment"
+            app:destination="@id/productOrderFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <argument
+            android:name="categoryType"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.productdetails.ProductDetailsFragment"
+        android:label="ProductDetailsFragment">
+        <argument
+            android:name="productCode"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_productHistoryListFragment"
+            app:destination="@id/productHistoryListFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productHistoryListFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.productdetails.ProductHistoryListFragment"
+        android:label="ProductHistoryListFragment" >
+        <argument
+            android:name="productCode"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productHistoryListFragment_to_productHistoryDetailsFragment"
+            app:destination="@id/productHistoryDetailsFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productHistoryDetailsFragment"
+        android:name="com.makeitez.acsalesapp.screens.products.productdetails.ProductHistoryDetailsFragment"
+        android:label="ProductHistoryDetailsFragment" >
+        <argument
+            android:name="productHistoryId"
+            app:argType="string" />
+        <argument
+            android:name="docNo"
+            app:argType="string" />
+        <argument
+            android:name="productCode"
+            app:argType="string" />
+    </fragment>
+</navigation>

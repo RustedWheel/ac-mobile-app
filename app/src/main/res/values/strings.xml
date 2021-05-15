@@ -1,0 +1,21 @@
+<resources>
+    <string name="generic_ok">OK</string>
+    <string name="generic_okay">Okay</string>
+    <string name="generic_yes">Yes</string>
+    <string name="generic_no">No</string>
+    <string name="generic_search">Search</string>
+    <string name="generic_refresh">Refresh</string>
+    <string name="generic_cancel">Cancel</string>
+    <string name="generic_discard">Discard</string>
+    <string name="generic_confirm">Confirm</string>
+    <string name="generic_continue">Continue</string>
+    <string name="generic_save">Save</string>
+    <string name="generic_try_again">Try Again</string>
+    <string name="generic_dash">-</string>
+    <string name="generic_back">back</string>
+
+    <string name="generic_error_no_internet_connection">Unable to connect to the server</string>
+    <string name="generic_error_something_went_wrong">Something went wrong</string>
+    <string name="generic_error_something_went_wrong_connecting_server">Something went wrong when connecting to server</string>
+    <string name="generic_error_something_went_wrong_when_download_pdf">Something went wrong when downloading PDF</string>
+</resources>

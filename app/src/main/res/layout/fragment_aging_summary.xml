@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/component_toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/app_margin_3x"
+                android:paddingEnd="@dimen/app_margin_3x">
+
+                <include layout="@layout/component_customer_id_header" />
+
+                <ProgressBar
+                    android:id="@+id/agingSummaryLoadingProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/app_margin_4x"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/ac_red"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/agingSummaryErrorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/app_margin_8x"
+                    android:layout_marginBottom="@dimen/app_margin_8x"
+                    layout="@layout/component_generic_try_again"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/agingSummaryDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/AC.Text.B2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/app_margin_2x"
+                        android:paddingEnd="@dimen/app_margin_2x"
+                        android:text="@string/customer_outstanding" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_current" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryCurrentOutstandingAmount"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_1_month" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryOneMonthOutstandingAmount"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_2_month" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryTwoMonthOutstandingAmount"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_3_month" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryThreeMonthOutstandingAmount"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_4_month" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryFourMonthOutstandingAmount"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_5_and_over" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryFiveMonthOverOutstandingAmount"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_2x_half"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        app:cardBackgroundColor="@color/ac_orange_50"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_balance" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryBalance"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/AC.Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_half"
+                        android:layout_marginTop="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_half"
+                        android:layout_marginBottom="84dp"
+                        app:cardBackgroundColor="@color/ac_red_50"
+                        app:contentPaddingBottom="@dimen/app_margin_1x_half"
+                        app:contentPaddingLeft="@dimen/app_margin_3x"
+                        app:contentPaddingRight="@dimen/app_margin_3x"
+                        app:contentPaddingTop="@dimen/app_margin_1x_half">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:text="@string/customer_total_overdue" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/agingSummaryTotalOverdue"
+                                style="@style/AC.Text.B2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/app_margin_1x"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                tools:text="585.00" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/agingSummarySeeMore"
+            style="@style/AC.Button.Red"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/app_margin_3x"
+            android:layout_marginEnd="@dimen/app_margin_3x"
+            android:layout_marginBottom="@dimen/app_margin_2x"
+            android:text="@string/customer_see_more"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

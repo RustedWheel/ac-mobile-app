@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_margin_quarter">2dp</dimen>
+    <dimen name="app_margin_half">4dp</dimen>
+    <dimen name="app_margin_1x">8dp</dimen>
+    <dimen name="app_margin_1x_half">12dp</dimen>
+    <dimen name="app_margin_2x">16dp</dimen>
+    <dimen name="app_margin_2x_half">20dp</dimen>
+    <dimen name="app_margin_3x">24dp</dimen>
+    <dimen name="app_margin_3x_half">28dp</dimen>
+    <dimen name="app_margin_4x">32dp</dimen>
+    <dimen name="app_margin_5x">40dp</dimen>
+    <dimen name="app_margin_6x">48dp</dimen>
+    <dimen name="app_margin_7x">56dp</dimen>
+    <dimen name="app_margin_8x">64dp</dimen>
+
+    <dimen name="text_input_box_stroke_width">2dp</dimen>
+    <dimen name="text_input_corner_size">8dp</dimen>
+
+    <dimen name="button_default_height">48dp</dimen>
+    <dimen name="button_height_small">34dp</dimen>
+    <dimen name="button_vert_inset">0dp</dimen>
+    <dimen name="button_corner_size">200dp</dimen>
+
+    <dimen name="card_corner_size">8dp</dimen>
+    <dimen name="table_cell_height">30dp</dimen>
+    <!--  overriding TableView's default column height  -->
+    <dimen name="default_column_header_height">@dimen/table_cell_height</dimen>
+
+    <dimen name="default_icon_size">24dp</dimen>
+
+    <dimen name="default_progress_bar_size">24dp</dimen>
+
+    <dimen name="splash_logo_width">156dp</dimen>
+    <dimen name="splash_progress_bar_width">152dp</dimen>
+    <dimen name="splash_content_bottom_offset">88dp</dimen>
+
+    <dimen name="login_logo_width">@dimen/splash_logo_width</dimen>
+
+    <dimen name="home_tile_height">124dp</dimen>
+
+    <dimen name="search_card_height">90dp</dimen>
+
+    <dimen name="cart_item_indicator_height">20dp</dimen>
+</resources>

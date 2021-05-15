@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.makeitez.acsalesapp.screens.products.productorder.ProductOrderViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/component_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            tools:context=".screens.products.productorder.ProductOrderFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/ac_red"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/app_margin_4x"
+                    android:paddingTop="@dimen/app_margin_1x"
+                    android:paddingRight="@dimen/app_margin_4x"
+                    android:paddingBottom="@dimen/app_margin_2x_half">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/productNameText"
+                        style="@style/AC.Text.H5.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/app_margin_1x"
+                        android:layout_marginEnd="@dimen/app_margin_1x"
+                        android:text="@{viewModel.productInfo.description}"
+                        android:textColor="@color/white"
+                        tools:text="Bahulu - Chocolate" />
+
+                    <LinearLayout
+                        visible="@{!viewModel.isReadOnly}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_2x_half"
+                            app:cardBackgroundColor="@color/ac_orange_50"
+                            app:cardCornerRadius="4dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingStart="@dimen/app_margin_1x_half"
+                                android:paddingTop="@dimen/app_margin_1x"
+                                android:paddingEnd="@dimen/app_margin_1x_half"
+                                android:paddingBottom="@dimen/app_margin_1x">
+
+                                <LinearLayout
+                                    android:id="@+id/productQuotationDetailsLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/app_margin_1x"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1"
+                                    app:visible="@{viewModel.productUomInfo.hasQuotation}">
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/productQuotationLabelText"
+                                        style="@style/AC.Text.B2.SemiBold"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.65"
+                                        android:text="@{viewModel.productUomInfo.quotationLabel}"
+                                        android:textColor="@{viewModel.productUomInfo.isQuotationEffective ? @color/ac_red_900 : @color/black}"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:text="Quotation (09/09/20)" />
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/productQuotationUnitPriceText"
+                                        style="@style/AC.Text.B2.SemiBold"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.35"
+                                        android:text="@{viewModel.productUomInfo.quotationPrice}"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:text="RM 2.300" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1">
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/AC.Text.B2.SemiBold"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.65"
+                                        android:text="@string/product_order_previous_price" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/productPreviousPriceText"
+                                        style="@style/AC.Text.B2.SemiBold"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.35"
+                                        android:text="@{viewModel.productUomInfo.previousPrice}"
+                                        tools:text="RM 1.800" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/productPreviousDiffPriceLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/app_margin_half"
+                                    android:orientation="horizontal"
+                                    android:weightSum="1"
+                                    app:visible="@{viewModel.productUomInfo.hasPreviousDiffPrice}">
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/productPreviousDiffPriceLabelText"
+                                        style="@style/AC.Text.B3.SemiBold"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.65"
+                                        android:text="@{viewModel.productUomInfo.previousDiffLabel}"
+                                        tools:text="Price at 07/09/2020" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/productPreviousDiffPriceText"
+                                        style="@style/AC.Text.B3.SemiBold"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.35"
+                                        android:text="@{viewModel.productUomInfo.previousDiffPrice}"
+                                        tools:text="RM 1.800" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_1x_half"
+                            app:cardBackgroundColor="@color/ac_orange_50"
+                            app:cardCornerRadius="4dp"
+                            app:visible="@{viewModel.productInfo.displayCurrencyRate}">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/customerCurrencyExchangeRateText"
+                                style="@style/AC.Text.B2.SemiBold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/app_margin_1x"
+                                android:gravity="center"
+                                android:text="@{String.format(@string/product_order_exchange_rate, viewModel.productInfo.currency, viewModel.productInfo.currencyRate)}"
+                                tools:text="1 SGD = ?.?? MYR" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/productStockCountText"
+                            style="@style/AC.Text.Subtitle1.SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/app_margin_2x_half"
+                            android:gravity="center"
+                            android:letterSpacing="0.1"
+                            android:text="@{String.format(@string/product_order_stock_count, viewModel.productUomInfo.stockDescription)}"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            app:textAllCaps="true"
+                            tools:text="@string/product_order_stock_count" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/AC.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/app_margin_2x"
+                    android:layout_marginTop="@dimen/app_margin_1x_half"
+                    android:layout_marginEnd="@dimen/app_margin_2x"
+                    android:elevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/app_margin_2x"
+                        android:paddingTop="@dimen/app_margin_1x_half"
+                        android:paddingEnd="@dimen/app_margin_2x"
+                        android:paddingBottom="@dimen/app_margin_1x_half">
+
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:text="@string/product_order_select_uom" />
+
+                            <RelativeLayout
+                                visible="@{!viewModel.isReadOnly}"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.54">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignEnd="@id/productUomSpinner"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="@dimen/app_margin_1x"
+                                    android:tint="@color/ac_red"
+                                    app:srcCompat="@drawable/ic_arrow_drop_down" />
+
+                                <Spinner
+                                    android:id="@+id/productUomSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="44dp"
+                                    android:background="@drawable/outlined_border_red"
+                                    app:overlapAnchor="false"
+                                    tools:listitem="@layout/item_uom_spinner" />
+
+                            </RelativeLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productUomInputText"
+                                style="@style/AC.EditText.Form"
+                                visible="@{viewModel.isReadOnly}"
+                                android:enabled="false"
+                                android:inputType="text"
+                                android:text="@{viewModel.confirmedOrderUomDescription}"
+                                tools:text="Ctn" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:text="@string/product_order_quantity" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productQuantityInputText"
+                                style="@style/AC.EditText.Form"
+                                android:enabled="@{!viewModel.isReadOnly}"
+                                android:inputType="number"
+                                android:text="@={viewModel.orderQuantity}"
+                                tools:text="32" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:text="@{@string/product_order_unit_price(viewModel.productInfo.currency)}"
+                                tools:text="Unit Price (MYR)" />
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productUnitPriceInputText"
+                                style="@style/AC.EditText.Form"
+                                android:enabled="false"
+                                android:inputType="numberDecimal"
+                                android:text="@{viewModel.orderUnitPrice}"
+                                tools:text="1.800" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                            <RelativeLayout
+                                style="@style/AC.Label.Form"
+                                visible="@{!viewModel.isReadOnly}">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignEnd="@id/productPriceChangeSpinner"
+                                    android:layout_centerVertical="true"
+                                    android:tint="@color/black"
+                                    app:srcCompat="@drawable/ic_arrow_drop_down" />
+
+                                <Spinner
+                                    android:id="@+id/productPriceChangeSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/app_margin_1x"
+                                    android:background="@android:color/transparent"
+                                    android:backgroundTint="@color/black"
+                                    tools:listitem="@layout/item_label_spinner" />
+
+                            </RelativeLayout>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                visible="@{viewModel.isReadOnly}"
+                                android:text="@{viewModel.orderPriceChangeDescription}"
+                                android:textColor="@{viewModel.orderViolationState.indicatePriceChange ? @color/ac_red_900 : @color/black}"
+                                tools:text="@string/product_order_new_price"
+                                tools:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productPriceChangeInputText"
+                                style="@style/AC.EditText.Form"
+                                android:enabled="@{!viewModel.isReadOnly}"
+                                android:inputType="numberDecimal"
+                                android:text="@={viewModel.orderPriceChange}"
+                                app:activated="@{viewModel.orderViolationState.indicatePriceChange}"
+                                tools:text="0.60" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/AC.LabelAndInputContainer.Form"
+                            android:layout_marginBottom="0dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:text="@string/product_order_foc"
+                                android:textColor="@{viewModel.orderViolationState.indicateFoc ? @color/ac_red_900 : @color/black}" />
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productFOCInputText"
+                                style="@style/AC.EditText.Form"
+                                android:enabled="@{!viewModel.isReadOnly}"
+                                android:inputType="number"
+                                android:text="@={viewModel.orderFoc}"
+                                app:activated="@{viewModel.orderViolationState.indicateFoc}"
+                                tools:text="3" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/AC.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/app_margin_2x"
+                    android:layout_marginTop="@dimen/app_margin_2x"
+                    android:layout_marginEnd="@dimen/app_margin_2x"
+                    android:layout_marginBottom="@dimen/app_margin_3x"
+                    app:cardElevation="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/app_margin_2x"
+                        android:paddingTop="@dimen/app_margin_1x_half"
+                        android:paddingEnd="@dimen/app_margin_2x"
+                        android:paddingBottom="@dimen/app_margin_1x_half">
+
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:text="@string/product_order_destination" />
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productDestinationInputText"
+                                style="@style/AC.EditText.Form"
+                                android:enabled="@{!viewModel.isReadOnly}"
+                                android:inputType="text"
+                                android:text="@={viewModel.orderDestination}"
+                                tools:text="BP Factory" />
+
+                        </LinearLayout>
+
+                        <!-- Hide as not needed but might be needed in the future -->
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:text="@string/product_order_delivery_date" />
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productDeliveryDateInputText"
+                                style="@style/AC.EditText.Form"
+                                android:cursorVisible="false"
+                                android:enabled="@{!viewModel.isReadOnly}"
+                                android:focusable="false"
+                                android:text="@{viewModel.orderDeliveryDateText}"
+                                tools:text="12/06/2020" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/AC.LabelAndInputContainer.Form">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/AC.Label.Form"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="@dimen/app_margin_2x"
+                                android:text="@string/product_order_remarks" />
+
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/productRemarksInputText"
+                                style="@style/AC.EditText.Form"
+                                android:enabled="@{!viewModel.isReadOnly}"
+                                android:gravity="top"
+                                android:inputType="textMultiLine"
+                                android:minLines="3"
+                                android:text="@={viewModel.orderRemarks}"
+                                tools:text="Mei Tin" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    visible="@{!viewModel.isReadOnly}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/app_margin_3x"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/app_margin_3x"
+                    android:paddingEnd="@dimen/app_margin_3x">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/app_margin_2x_half"
+                        android:background="@drawable/product_order_hint_background"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/app_margin_2x_half"
+                        android:paddingTop="@dimen/app_margin_2x"
+                        android:paddingEnd="@dimen/app_margin_2x_half"
+                        android:paddingBottom="@dimen/app_margin_1x_half"
+                        app:visible="@{!viewModel.orderValidationState.canContinue}">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Hint.Form"
+                            android:text="@string/product_order_invalid_quantity"
+                            app:visible="@{viewModel.orderValidationState.showQuantityHint}" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Hint.Form"
+                            android:text="@string/product_order_invalid_discount"
+                            app:visible="@{viewModel.orderValidationState.showDiscountHint}" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Hint.Form"
+                            android:text="@string/product_order_invalid_unit_price"
+                            app:visible="@{viewModel.orderValidationState.showUnitPriceHint}" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Hint.Form"
+                            android:text="@string/product_order_invalid_new_price"
+                            app:visible="@{viewModel.orderValidationState.showNewPriceHint}" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/AC.Hint.Form"
+                            android:text="@string/product_order_invalid_foc"
+                            app:visible="@{viewModel.orderValidationState.showFocHint}" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/productAddToOrderButton"
+                        style="@style/AC.Button.Red"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="@{viewModel.orderValidationState.canContinue}"
+                        android:onClick="@{() -> viewModel.fillOrder()}"
+                        android:text="@{viewModel.continueButtonName}"
+                        tools:text="@string/product_order_add_to_order" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+</layout>

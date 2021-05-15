@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/app_margin_3x"
+    android:background="@drawable/bg_round_rect"
+    android:orientation="vertical"
+    android:padding="@dimen/app_margin_3x"
+    android:theme="@style/AC.Theme">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/previous_order_customer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchSalesOrderCustomerInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_1x"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:hint="@string/previous_search_from">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchSalesOrderFromDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:hint="@string/previous_search_to">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchSalesOrderToDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_3x"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/searchSalesOrderConfirmButton"
+            style="@style/AC.Button.Red"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/app_margin_1x"
+            android:layout_weight="1"
+            android:text="@string/previous_search_sales_order" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchSalesOrderResetButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/ic_cancel_red" />
+
+    </LinearLayout>
+
+</LinearLayout>

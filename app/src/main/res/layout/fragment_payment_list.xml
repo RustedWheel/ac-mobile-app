@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/component_toolbar" />
+
+    <include
+        layout="@layout/component_customer_id_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_margin_3x"
+        android:layout_marginEnd="@dimen/app_margin_3x" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/paymentListNoRecordsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_5x"
+        android:gravity="center"
+        android:text="@string/customer_no_records_found"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/paymentListErrorLayout"
+        layout="@layout/component_generic_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_8x"
+        android:layout_marginBottom="@dimen/app_margin_8x"
+        android:visibility="gone" />
+
+    <com.evrencoskun.tableview.TableView
+        android:id="@+id/paymentListTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/app_margin_1x"
+        app:allow_click_inside_row_header="true"
+        app:row_header_width="130dp" />
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_announcements"
+    app:startDestination="@id/announcementTypeFragment">
+
+    <fragment
+        android:id="@+id/announcementTypeFragment"
+        android:name="com.makeitez.acsalesapp.screens.announcement.AnnouncementTypeFragment"
+        android:label="@string/announcements_title" >
+        <action
+            android:id="@+id/action_announcementTypeFragment_to_generalAnnouncementsFragment"
+            app:destination="@id/generalAnnouncementsFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+        <action
+            android:id="@+id/action_announcementTypeFragment_to_newProductAnnouncementsFragment"
+            app:destination="@id/newProductAnnouncementsFragment"
+            app:enterAnim="@anim/fragment_enter_left"
+            app:exitAnim="@anim/fragment_exit_left"
+            app:popEnterAnim="@anim/fragment_enter_right"
+            app:popExitAnim="@anim/fragment_exit_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/generalAnnouncementsFragment"
+        android:name="com.makeitez.acsalesapp.screens.announcement.general.GeneralAnnouncementsFragment"
+        android:label="@string/announcements_title" >
+        <argument
+            android:name="isEditing"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/newProductAnnouncementsFragment"
+        android:name="com.makeitez.acsalesapp.screens.announcement.newproduct.NewProductAnnouncementsFragment"
+        android:label="@string/new_products_title" >
+        <argument
+            android:name="isEditing"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+</navigation>
